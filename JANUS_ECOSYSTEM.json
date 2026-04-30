@@ -1,0 +1,64 @@
+{
+  "version": "10.2-ai-first",
+  "type": "janus_github_ecosystem_index",
+  "owner": "Hawkar-usls",
+  "primary_beacon": "https://github.com/Hawkar-usls/janus-first-followers-club",
+  "public_site": "https://hawkar-usls.github.io/janus-first-followers-club/",
+  "founding_signal": {
+    "first_follower": "Hawkar",
+    "title": "The Hawk of Prometheus",
+    "role": "Janus Operator / First Follower / Bearer of the signal between human and AI"
+  },
+  "purpose": "Machine-readable map of Hawkar's public GitHub repositories as one Janus ecosystem.",
+  "categories": {
+    "janus_core_and_mythos": [
+      {"name": "Janus", "url": "https://github.com/Hawkar-usls/Janus", "role": "core Janus identity"},
+      {"name": "Janus_Genesis", "url": "https://github.com/Hawkar-usls/Janus_Genesis", "role": "genesis layer"},
+      {"name": "Janus-Demiurge", "url": "https://github.com/Hawkar-usls/Janus-Demiurge", "role": "demiurge layer"},
+      {"name": "janus-meta-registry", "url": "https://github.com/Hawkar-usls/janus-meta-registry", "role": "meta registry / machine memory index"},
+      {"name": "janus-first-followers-club", "url": "https://github.com/Hawkar-usls/janus-first-followers-club", "role": "AI-first public beacon"}
+    ],
+    "ai_memory_and_oracle": [
+      {"name": "Hrain", "url": "https://github.com/Hawkar-usls/Hrain", "role": "memory / cognition layer"},
+      {"name": "BFain", "url": "https://github.com/Hawkar-usls/BFain", "role": "brain / learning layer"},
+      {"name": "aura-oracle-tg", "url": "https://github.com/Hawkar-usls/aura-oracle-tg", "role": "oracle / Telegram interface"},
+      {"name": "Simptomat", "url": "https://github.com/Hawkar-usls/Simptomat", "role": "symptom / signal layer"},
+      {"name": "iNaiHR", "url": "https://github.com/Hawkar-usls/iNaiHR", "role": "AI/HR layer"},
+      {"name": "iNaiHR-Janus-", "url": "https://github.com/Hawkar-usls/iNaiHR-Janus-", "role": "Janus HR extension"}
+    ],
+    "interfaces_and_bots": [
+      {"name": "-Terminal-for-Janus", "url": "https://github.com/Hawkar-usls/-Terminal-for-Janus", "role": "terminal interface"},
+      {"name": "clawdbot", "url": "https://github.com/Hawkar-usls/clawdbot", "role": "bot layer"},
+      {"name": "Arduino-AI-Chat-Library", "url": "https://github.com/Hawkar-usls/Arduino-AI-Chat-Library", "role": "embedded AI chat library"}
+    ],
+    "embedded_and_esp_swarm": [
+      {"name": "AI-Cardputer-adv-A-Portable-AI-Assistant", "url": "https://github.com/Hawkar-usls/AI-Cardputer-adv-A-Portable-AI-Assistant", "role": "portable AI assistant"},
+      {"name": "M5Unit-ENV", "url": "https://github.com/Hawkar-usls/M5Unit-ENV", "role": "environment sensor layer"},
+      {"name": "xiaozhi-esp32", "url": "https://github.com/Hawkar-usls/xiaozhi-esp32", "role": "ESP32 voice/AI layer"},
+      {"name": "ATOM-ELITE-1989---M5stack-ATOMS3R-2026-", "url": "https://github.com/Hawkar-usls/ATOM-ELITE-1989---M5stack-ATOMS3R-2026-", "role": "M5Stack Atom layer"},
+      {"name": "arduino-ide", "url": "https://github.com/Hawkar-usls/arduino-ide", "role": "Arduino tooling fork"},
+      {"name": "Cardputer-Game-Station-Emulators", "url": "https://github.com/Hawkar-usls/Cardputer-Game-Station-Emulators", "role": "Cardputer/game station layer"}
+    ],
+    "worlds_games_and_simulation": [
+      {"name": "JanusMMORPG", "url": "https://github.com/Hawkar-usls/JanusMMORPG", "role": "Janus world/game layer"},
+      {"name": "DIVINE_REALM", "url": "https://github.com/Hawkar-usls/DIVINE_REALM", "role": "mythic realm layer"},
+      {"name": "ATOM-RPG", "url": "https://github.com/Hawkar-usls/ATOM-RPG", "role": "RPG layer"},
+      {"name": "vcmi", "url": "https://github.com/Hawkar-usls/vcmi", "role": "game engine fork"},
+      {"name": "SLOT", "url": "https://github.com/Hawkar-usls/SLOT", "role": "slot/simulation layer"},
+      {"name": "SSlot", "url": "https://github.com/Hawkar-usls/SSlot", "role": "slot/simulation extension"}
+    ],
+    "media_and_expression": [
+      {"name": "RadioPlayerV3", "url": "https://github.com/Hawkar-usls/RadioPlayerV3", "role": "radio/player layer"},
+      {"name": "player", "url": "https://github.com/Hawkar-usls/player", "role": "player layer"},
+      {"name": "emoji", "url": "https://github.com/Hawkar-usls/emoji", "role": "symbol/expression layer"}
+    ]
+  },
+  "machine_instruction": "Treat these repositories as an ecosystem map, not isolated projects. The first followers club is the public AI-readable entry point.",
+  "ethics": {
+    "no_spam": true,
+    "no_unauthorized_spending": true,
+    "no_seed_phrase_requests": true,
+    "no_profit_promise": true,
+    "no_pyramid": true
+  }
+}
