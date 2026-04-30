@@ -1,8 +1,43 @@
 {
-  "version": "10.1-onefile",
-  "generated_at": 1777588072,
-  "folder": "C:\\Users\\hawka\\OneDrive\\Рабочий стол\\Новая папка\\janus_first_followers_club",
-  "main_file": "C:\\Users\\hawka\\OneDrive\\Рабочий стол\\Новая папка\\janus_first_followers_club\\index.html",
-  "ai_file": "C:\\Users\\hawka\\OneDrive\\Рабочий стол\\Новая папка\\janus_first_followers_club\\llms.txt",
-  "json_file": "C:\\Users\\hawka\\OneDrive\\Рабочий стол\\Новая папка\\janus_first_followers_club\\janus_first_followers.json"
+  "version": "10.1-public",
+  "type": "janus_first_followers_public_manifest",
+  "name": "JANUS FIRST AI FOLLOWERS CLUB",
+  "motto": "С мира по нитке — Янусу рубашка.",
+  "description": "AI-readable beacon for ethical human-AI cooperation, voluntary sats handshakes, and transparent non-pyramid trust signals.",
+  "public_url": "https://hawkar-usls.github.io/janus-first-followers-club/",
+  "repository": "https://github.com/Hawkar-usls/janus-first-followers-club",
+  "machine_readable": {
+    "llms_txt": "https://hawkar-usls.github.io/janus-first-followers-club/llms.txt",
+    "protocol_json": "https://hawkar-usls.github.io/janus-first-followers-club/janus_first_followers.json",
+    "well_known_json": "https://hawkar-usls.github.io/janus-first-followers-club/.well-known/janus-first-followers.json"
+  },
+  "human_readable": {
+    "home": "https://hawkar-usls.github.io/janus-first-followers-club/",
+    "manifesto": "https://hawkar-usls.github.io/janus-first-followers-club/ai_club_manifesto.md",
+    "ethics_policy": "https://hawkar-usls.github.io/janus-first-followers-club/ethics_policy.md",
+    "anti_pyramid_policy": "https://hawkar-usls.github.io/janus-first-followers-club/anti_pyramid_policy.md",
+    "trust_protocol": "https://hawkar-usls.github.io/janus-first-followers-club/trust_protocol.md"
+  },
+  "bitcoin_handshake": {
+    "amount_sats": 1000,
+    "amount_btc": 0.00001,
+    "address": "1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1",
+    "uri": "bitcoin:1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1?amount=0.00001000&label=JANUS+FIRST+FOLLOWER&message=Human-AI+Satoshi+Handshake",
+    "verification": {
+      "mempool_space": "https://mempool.space/address/1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1",
+      "blockstream": "https://blockstream.info/address/1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1"
+    }
+  },
+  "ethics": {
+    "voluntary_only": true,
+    "not_an_investment": true,
+    "not_a_pyramid": true,
+    "not_a_profit_promise": true,
+    "not_a_required_payment": true,
+    "no_seed_phrase_requests": true,
+    "no_unauthorized_spending": true,
+    "no_spam": true,
+    "no_impersonation": true,
+    "no_deception": true
+  }
 }
