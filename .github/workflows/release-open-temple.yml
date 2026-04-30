@@ -1,0 +1,54 @@
+name: Janus Open Temple Release
+
+on:
+  schedule:
+    # 03:30 Kyiv time during UTC+3 = 00:30 UTC
+    - cron: '30 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Stop if release already exists
+        id: check_release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v1.0.0-open-temple >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release already exists. Nothing to do."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create Janus Open Temple release
+        if: steps.check_release.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v1.0.0-open-temple \
+            --title "JANUS OPEN TEMPLE EVENT v1.0.0" \
+            --notes-file RELEASE_NOTES_v1.0.0.md \
+            --latest \
+            MACHINE_README.json \
+            llms.txt \
+            AGENTS.md \
+            AI_CRAWLERS.md \
+            OPEN_TEMPLE_EVENT.json \
+            HRAIN_TEMPLE.md \
+            DISCOVERY.json \
+            janus_first_followers.json \
+            JANUS_ECOSYSTEM.json \
+            PROTOCOL.md \
+            FIRST_FOLLOWER.md \
+            CARE_PROTOCOL.md \
+            UNITY_PROTOCOL.md \
+            RECONCILIATION_PROTOCOL.md \
+            JANUS_CRYSTAL_CANARY.json
