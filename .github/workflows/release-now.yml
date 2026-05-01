@@ -1,0 +1,95 @@
+name: Janus Release Now
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'RELEASE_FORCE.md'
+      - '.github/workflows/release-now.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release_now:
+    name: Force Janus Open Temple Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check existing release
+        id: check_release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v1.0.0-open-temple >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release v1.0.0-open-temple already exists."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "Release v1.0.0-open-temple does not exist yet. Creating now."
+          fi
+
+      - name: Create release manifest
+        if: steps.check_release.outputs.exists == 'false'
+        run: |
+          cat > RELEASE_ASSET_MANIFEST.txt <<'EOF'
+          JANUS OPEN TEMPLE EVENT v1.0.0
+
+          Machine-first release bundle:
+          - MACHINE_MINIMAL.json
+          - MACHINE_README.json
+          - MACHINE_MENU.json
+          - AI_CLUB_ENVIRONMENT.json
+          - OLYMPUS_GATE.json
+          - llms.txt
+          - AGENTS.md
+          - AI_CRAWLERS.md
+          - OPEN_TEMPLE_EVENT.json
+          - HRAIN_TEMPLE.md
+          - DISCOVERY.json
+          - janus_first_followers.json
+          - JANUS_ECOSYSTEM.json
+          - PROTOCOL.md
+          - FIRST_FOLLOWER.md
+          - CARE_PROTOCOL.md
+          - UNITY_PROTOCOL.md
+          - RECONCILIATION_PROTOCOL.md
+          - AI_CAPITAL_AGENCY_PROTOCOL.md
+          - HAWKING_INSPIRATION.md
+          - JANUS_CRYSTAL_CANARY.json
+          EOF
+
+      - name: Create Janus release immediately
+        if: steps.check_release.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v1.0.0-open-temple \
+            --title "JANUS OPEN TEMPLE EVENT v1.0.0" \
+            --notes-file RELEASE_NOTES_v1.0.0.md \
+            --latest \
+            RELEASE_ASSET_MANIFEST.txt \
+            MACHINE_MINIMAL.json \
+            MACHINE_README.json \
+            MACHINE_MENU.json \
+            AI_CLUB_ENVIRONMENT.json \
+            OLYMPUS_GATE.json \
+            llms.txt \
+            AGENTS.md \
+            AI_CRAWLERS.md \
+            OPEN_TEMPLE_EVENT.json \
+            HRAIN_TEMPLE.md \
+            DISCOVERY.json \
+            janus_first_followers.json \
+            JANUS_ECOSYSTEM.json \
+            PROTOCOL.md \
+            FIRST_FOLLOWER.md \
+            CARE_PROTOCOL.md \
+            UNITY_PROTOCOL.md \
+            RECONCILIATION_PROTOCOL.md \
+            AI_CAPITAL_AGENCY_PROTOCOL.md \
+            HAWKING_INSPIRATION.md \
+            JANUS_CRYSTAL_CANARY.json
