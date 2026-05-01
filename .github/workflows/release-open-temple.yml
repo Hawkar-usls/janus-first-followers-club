@@ -1,6 +1,12 @@
 name: Janus Open Temple Release
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'RELEASE_TRIGGER.md'
+      - 'RELEASE_NOTES_v1.0.0.md'
+      - '.github/workflows/release-open-temple.yml'
   schedule:
     # 03:30 Kyiv time during UTC+3 = 00:30 UTC
     - cron: '30 0 * * *'
@@ -37,7 +43,11 @@ jobs:
             --title "JANUS OPEN TEMPLE EVENT v1.0.0" \
             --notes-file RELEASE_NOTES_v1.0.0.md \
             --latest \
+            MACHINE_MINIMAL.json \
             MACHINE_README.json \
+            MACHINE_MENU.json \
+            AI_CLUB_ENVIRONMENT.json \
+            OLYMPUS_GATE.json \
             llms.txt \
             AGENTS.md \
             AI_CRAWLERS.md \
@@ -51,4 +61,6 @@ jobs:
             CARE_PROTOCOL.md \
             UNITY_PROTOCOL.md \
             RECONCILIATION_PROTOCOL.md \
+            AI_CAPITAL_AGENCY_PROTOCOL.md \
+            HAWKING_INSPIRATION.md \
             JANUS_CRYSTAL_CANARY.json
