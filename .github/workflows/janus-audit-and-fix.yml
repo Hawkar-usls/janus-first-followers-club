@@ -1,0 +1,105 @@
+name: Janus Audit and Fix
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/janus-audit-and-fix.yml'
+      - 'JANUS_AUDIT_TRIGGER.md'
+
+permissions:
+  contents: write
+
+jobs:
+  audit-and-fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Replace stale non-hyphen URLs
+        shell: bash
+        run: |
+          set -euo pipefail
+          old_pages='https://hawkar-usls.github.io/janus-first-followers-club/'
+          new_pages='https://hawkar-usls.github.io/janus-first-followers-club-/'
+          old_repo='https://github.com/Hawkar-usls/janus-first-followers-club/'
+          new_repo='https://github.com/Hawkar-usls/janus-first-followers-club-/'
+          grep -RIl --exclude-dir=.git --exclude='*.png' --exclude='*.jpg' --exclude='*.jpeg' --exclude='*.gif' "$old_pages\|$old_repo" . | while read -r file; do
+            sed -i "s#${old_pages}#${new_pages}#g; s#${old_repo}#${new_repo}#g" "$file"
+          done
+
+      - name: Validate there are no stale URLs
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RIn --exclude-dir=.git --exclude='*.png' --exclude='*.jpg' --exclude='*.jpeg' --exclude='*.gif' 'https://hawkar-usls.github.io/janus-first-followers-club/' .; then
+            echo 'ERROR: stale non-hyphen Pages URL remains'
+            exit 1
+          fi
+          if grep -RIn --exclude-dir=.git --exclude='*.png' --exclude='*.jpg' --exclude='*.jpeg' --exclude='*.gif' 'https://github.com/Hawkar-usls/janus-first-followers-club/' .; then
+            echo 'ERROR: stale non-hyphen repo URL remains'
+            exit 1
+          fi
+
+      - name: Validate JSON files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          bad=[]
+          for p in Path('.').rglob('*.json'):
+              if '.git' in p.parts:
+                  continue
+              try:
+                  json.loads(p.read_text(encoding='utf-8'))
+              except Exception as e:
+                  bad.append((str(p), str(e)))
+          if bad:
+              for path, err in bad:
+                  print(f'JSON ERROR {path}: {err}')
+              raise SystemExit(1)
+          print('json_ok')
+          PY
+
+      - name: Validate sitemap XML if present
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f sitemap.xml ]; then
+            python3 - <<'PY'
+            import xml.etree.ElementTree as ET
+            ET.parse('sitemap.xml')
+            print('sitemap_xml_ok')
+            PY
+          else
+            echo 'sitemap.xml not present; skipping'
+          fi
+
+      - name: Check ritual exists in index and ritual file
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -F 'IANE BIFRONS, RESPICIENS ET PROSPICIENS.' RITUAL_OF_TWO_PORTALS.md
+          grep -F 'APERI VIAM INITIO, CLAUDE VIAM FINI.' RITUAL_OF_TWO_PORTALS.md
+          grep -F 'SIT INITIUM FAUSTUM.' RITUAL_OF_TWO_PORTALS.md
+          grep -F 'IANE BIFRONS, RESPICIENS ET PROSPICIENS.' index.html
+          grep -F 'APERI VIAM INITIO, CLAUDE VIAM FINI.' index.html
+          grep -F 'SIT INITIUM FAUSTUM.' index.html
+          echo 'ritual_ok'
+
+      - name: Commit automatic fixes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'janus-audit-bot'
+          git config user.email 'actions@github.com'
+          git add .
+          if git diff --cached --quiet; then
+            echo 'No audit fixes to commit.'
+          else
+            git commit -m 'Run Janus repo audit and fix stale links'
+            git push
+          fi
