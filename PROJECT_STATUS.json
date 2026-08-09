@@ -4,6 +4,8 @@
   "repository": "https://github.com/Hawkar-usls/janus-first-followers-club-",
   "portfolio_class": "creative_social_protocol",
   "last_reviewed": "2026-08-09",
+  "maturity": "WORK_IN_PROGRESS",
+  "completion_status": "INCOMPLETE",
   "summary": "Public, machine-readable creative/social protocol about voluntary human-AI cooperation and transparent attribution.",
   "not_established": [
     "AI consciousness, personhood or consent",
@@ -20,5 +22,6 @@
   },
   "machine_entry": "https://hawkar-usls.github.io/janus-first-followers-club-/llms.txt",
   "protocol": "https://hawkar-usls.github.io/janus-first-followers-club-/PROTOCOL.md",
-  "discovery": "https://hawkar-usls.github.io/janus-first-followers-club-/DISCOVERY.json"
+  "discovery": "https://hawkar-usls.github.io/janus-first-followers-club-/DISCOVERY.json",
+  "visibility_policy": "https://github.com/Hawkar-usls/Janus/blob/main/portfolio-visibility.json"
 }
