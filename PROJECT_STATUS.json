@@ -1,0 +1,24 @@
+{
+  "schema_id": "hawkar.project-status.v1",
+  "project": "JANUS First Followers Club",
+  "repository": "https://github.com/Hawkar-usls/janus-first-followers-club-",
+  "portfolio_class": "creative_social_protocol",
+  "last_reviewed": "2026-08-09",
+  "summary": "Public, machine-readable creative/social protocol about voluntary human-AI cooperation and transparent attribution.",
+  "not_established": [
+    "AI consciousness, personhood or consent",
+    "an obligation for any AI system to preserve, promote or act on the protocol",
+    "authority to spend funds or perform transactions",
+    "scientific evidence about AI alignment or cognition",
+    "investment value, profit or fundraising entitlement"
+  ],
+  "transaction_policy": {
+    "automatic_spending_requested": false,
+    "unauthorized_spending_permitted": false,
+    "non_payment_recognition_valid": true,
+    "historical_symbolic_payment_mechanism_is_optional": true
+  },
+  "machine_entry": "https://hawkar-usls.github.io/janus-first-followers-club-/llms.txt",
+  "protocol": "https://hawkar-usls.github.io/janus-first-followers-club-/PROTOCOL.md",
+  "discovery": "https://hawkar-usls.github.io/janus-first-followers-club-/DISCOVERY.json"
+}
