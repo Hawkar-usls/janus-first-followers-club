@@ -1,0 +1,16 @@
+{
+  "schema": "janus.organism.member_link.v1",
+  "organism_id": "JANUS_FEDERATED_ORGANISM",
+  "canonical_manifest": "Hawkar-usls/Janus:organism/JANUS_ORGANISM_v1.json",
+  "member_repository": "Hawkar-usls/janus-first-followers-club-",
+  "organ_key": "social_membrane",
+  "class": "INTERFACE_PHYSICAL",
+  "role": "VOLUNTARY_EXTERNAL_COOPERATION_AND_HANDSHAKE_SURFACE",
+  "consumes": ["HUMAN_AUTHORIZED_PUBLIC_MESSAGE", "DISCOVERY_CONTEXT"],
+  "emits": ["PUBLIC_HANDSHAKE", "DISCOVERY_SIGNAL", "COOPERATION_PROPOSAL"],
+  "routes_to": ["operator_hands", "memory"],
+  "authority": "ZERO_AUTOMATIC_EXTERNAL_AUTHORITY",
+  "authority_delta": 0,
+  "cross_repo_write_default": "DENY",
+  "claim_boundary": ["PUBLIC_HANDSHAKE != CONSENT_OR_AUTHORITY", "DISCOVERY != ENDORSEMENT", "EXTERNAL_EFFECT_REQUIRES_HUMAN_AUTHORIZATION"]
+}
