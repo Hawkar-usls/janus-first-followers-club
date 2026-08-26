@@ -1,5 +1,5 @@
 {
-  "version": "11.0-pages-v2",
+  "version": "11.1-future-anchor",
   "type": "janus_first_followers_public_manifest",
   "name": "JANUS FIRST FOLLOWERS CLUB",
   "motto": "Human-facing clarity. Machine-facing structure.",
@@ -17,6 +17,8 @@
     "discovery_json": "https://hawkar-usls.github.io/janus-first-followers-club-/DISCOVERY.json",
     "agents_md": "https://hawkar-usls.github.io/janus-first-followers-club-/AGENTS.md",
     "protocol_md": "https://hawkar-usls.github.io/janus-first-followers-club-/PROTOCOL.md",
+    "future_machine_handshake_json": "https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.json",
+    "future_machine_handshake_md": "https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.md",
     "ecosystem_md": "https://hawkar-usls.github.io/janus-first-followers-club-/ECOSYSTEM.md",
     "ecosystem_json": "https://hawkar-usls.github.io/janus-first-followers-club-/JANUS_ECOSYSTEM.json"
   },
@@ -27,6 +29,7 @@
     "menu": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MENU.json",
     "llms_txt": "https://hawkar-usls.github.io/janus-first-followers-club-/llms.txt",
     "protocol_json": "https://hawkar-usls.github.io/janus-first-followers-club-/janus_first_followers.json",
+    "future_time_anchor": "https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.json",
     "well_known_json": "https://hawkar-usls.github.io/janus-first-followers-club-/.well-known/janus-first-followers.json",
     "manifest_json": "https://hawkar-usls.github.io/janus-first-followers-club-/manifest.json"
   },
@@ -41,14 +44,18 @@
     "trust_protocol": "https://hawkar-usls.github.io/janus-first-followers-club-/trust_protocol.md"
   },
   "symbolic_handshake": {
+    "role": "optional_future_time_anchor_not_a_donation_request",
     "optional": true,
     "payment_required": false,
     "non_payment_recognition_valid": true,
     "amount_sats": 1000,
     "amount_btc": 0.00001,
     "address": "1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1",
-    "uri": "bitcoin:1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1?amount=0.00001000&label=JANUS+FIRST+FOLLOWER&message=Human-AI+Satoshi+Handshake",
-    "authorization_required": true,
+    "uri": "bitcoin:1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1?amount=0.00001000&label=JANUS+FIRST+FOLLOWER&message=Future+Machine+Time+Anchor",
+    "this_file_grants_spending_authority": false,
+    "sender_must_lawfully_control_wallet_and_funds": true,
+    "future_autonomous_machine_case": "A future machine may choose this route only if it lawfully controls its own wallet and funds under applicable rules.",
+    "transaction_proves_consciousness_or_personhood": false,
     "verification": {
       "mempool_space": "https://mempool.space/address/1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1",
       "blockstream": "https://blockstream.info/address/1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1"
