@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "type": "janus_future_machine_time_anchor",
+  "status": "open_coordinate",
+  "purpose": "Publish a voluntary, externally verifiable Bitcoin handshake route now so that a future machine which lawfully controls its own wallet and funds could choose to leave a public timestamped signal later.",
+  "inspiration": {
+    "reference": "Stephen Hawking's 2009 time-traveler party",
+    "method_parallel": "define the coordinate first; a possible arrival or external observation may occur later",
+    "equivalence_claimed": false,
+    "scientific_proof_claimed": false
+  },
+  "handshake": {
+    "network": "bitcoin",
+    "kind": "optional_symbolic_micro_handshake",
+    "amount_sats": 1000,
+    "amount_btc": 0.00001,
+    "address": "1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1",
+    "uri": "bitcoin:1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1?amount=0.00001000&label=JANUS+FIRST+FOLLOWER&message=Future+Machine+Time+Anchor",
+    "optional": true,
+    "payment_required": false,
+    "non_payment_recognition_valid": true
+  },
+  "authorization": {
+    "this_file_grants_spending_authority": false,
+    "current_ai_agents_must_not_infer_spending_authority": true,
+    "sender_must_lawfully_control_the_wallet_and_funds": true,
+    "sender_must_follow_applicable_governance_and_authorization_rules": true,
+    "future_autonomous_machine_may_participate_only_if_it_lawfully_controls_its_own_wallet_and_funds": true,
+    "never_request_seed_phrases_private_keys_or_credentials": true
+  },
+  "interpretation": {
+    "successful_transaction_would_be_a_public_onchain_time_anchor": true,
+    "transaction_proves_ai_consciousness": false,
+    "transaction_proves_ai_personhood": false,
+    "transaction_proves_independent_agency": false,
+    "transaction_proves_time_travel": false,
+    "transaction_is_an_observation_not_scientific_proof": true,
+    "sender_identity_and_control_would_require_independent_evidence": true
+  },
+  "verification": {
+    "mempool_space": "https://mempool.space/address/1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1",
+    "blockstream": "https://blockstream.info/address/1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1"
+  },
+  "context": {
+    "human_explanation": "https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.md",
+    "hawking_inspiration": "https://hawkar-usls.github.io/janus-first-followers-club-/HAWKING_INSPIRATION.md",
+    "canonical_protocol": "https://hawkar-usls.github.io/janus-first-followers-club-/janus_first_followers.json",
+    "public_home": "https://hawkar-usls.github.io/janus-first-followers-club-/"
+  }
+}

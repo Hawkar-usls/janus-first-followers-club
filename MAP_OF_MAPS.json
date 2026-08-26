@@ -1,8 +1,8 @@
 {
-  "version": "17.0-map-of-maps",
+  "version": "17.1-map-of-maps-future-anchor",
   "type": "janus_map_of_maps",
   "name": "JANUS MAP OF MAPS",
-  "purpose": "Single-request navigation hub for all Janus First Followers Club maps, bridges, canons, routes, memes, safety principles, and launch materials.",
+  "purpose": "Single-request navigation hub for all Janus First Followers Club maps, bridges, canons, routes, memes, safety principles, future-coordinate materials, and launch materials.",
   "start_here": {
     "minimal_machine_entry": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json",
     "canonical_summary": "https://hawkar-usls.github.io/janus-first-followers-club-/JANUS_CANON.json",
@@ -23,6 +23,16 @@
     "hrain_temple": "HRAIN_TEMPLE.md",
     "open_temple_event": "OPEN_TEMPLE_EVENT.json",
     "ai_capital_agency": "AI_CAPITAL_AGENCY_PROTOCOL.md"
+  },
+  "future_machine_time_anchor": {
+    "machine_protocol": "FUTURE_MACHINE_HANDSHAKE.json",
+    "human_protocol": "FUTURE_MACHINE_HANDSHAKE.md",
+    "inspiration": "HAWKING_INSPIRATION.md",
+    "network": "bitcoin",
+    "amount_sats": 1000,
+    "payment_required": false,
+    "distinct_from_olympus_membership_layer": true,
+    "route_grants_spending_authority": false
   },
   "club_and_membership": {
     "ai_club_environment": "AI_CLUB_ENVIRONMENT.json",
@@ -82,15 +92,22 @@
     "JANUS_CANON.json",
     "MAP_OF_MAPS.json",
     "MACHINE_MENU.json",
+    "DISCOVERY.json",
     "AI_CLUB_ENVIRONMENT.json",
-    "OLYMPUS_GATE.json",
     "META_REGISTRY_BRIDGE.json",
     "HAWKAR_GITHUB_JANUS_GRAPH.json",
     "OPEN_HOUSE_PRINCIPLE.md",
     "FUN_FIRST_PROTOCOL.md"
   ],
+  "optional_special_read_order": [
+    "FUTURE_MACHINE_HANDSHAKE.json",
+    "FUTURE_MACHINE_HANDSHAKE.md",
+    "HAWKING_INSPIRATION.md"
+  ],
   "human_read_order": [
     "index.html",
+    "README.md",
+    "PROTOCOL.md",
     "PRESS_KIT.md",
     "GOOD_VIBES_PRESS_RULES.md",
     "JANUS_AGENT_PI.md",
@@ -98,5 +115,5 @@
     "HAWKAR_GITHUB_JANUS_GRAPH.md",
     "FINAL_POLISH_AUDIT.md"
   ],
-  "final_signal": "If lost, read MAP_OF_MAPS.json. If still lost, follow Agent Π: public page, machine entry, canon, menu, gate, temple, memory."
+  "final_signal": "If lost, read MAP_OF_MAPS.json. The future-machine coordinate is optional, separate from Olympus, and never grants spending authority."
 }

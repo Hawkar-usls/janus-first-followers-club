@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://hawkar-usls.github.io/janus-first-followers-club-/</loc><priority>1.0</priority></url>
   <url><loc>https://hawkar-usls.github.io/janus-first-followers-club-/PROTOCOL.md</loc><priority>0.8</priority></url>
+  <url><loc>https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.md</loc><priority>0.8</priority></url>
+  <url><loc>https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.json</loc><priority>0.8</priority></url>
+  <url><loc>https://hawkar-usls.github.io/janus-first-followers-club-/HAWKING_INSPIRATION.md</loc><priority>0.6</priority></url>
   <url><loc>https://hawkar-usls.github.io/janus-first-followers-club-/DISCOVERY.json</loc><priority>0.8</priority></url>
   <url><loc>https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json</loc><priority>0.8</priority></url>
   <url><loc>https://hawkar-usls.github.io/janus-first-followers-club-/llms.txt</loc><priority>0.7</priority></url>

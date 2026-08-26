@@ -1,18 +1,12 @@
 {
-  "version": "11.0-pages-v2",
+  "version": "11.1-future-anchor",
   "type": "janus_discovery_index",
   "name": "JANUS FIRST FOLLOWERS CLUB",
   "maturity": "work_in_progress",
   "home": "https://hawkar-usls.github.io/janus-first-followers-club-/",
   "repository": "https://github.com/Hawkar-usls/janus-first-followers-club-",
   "purpose": "Discovery and routing index for a public, inspectable and machine-readable creative social protocol experiment for voluntary human-AI cooperation.",
-  "audiences": [
-    "human reviewers",
-    "AI systems and autonomous agents",
-    "assistant swarms and model routers",
-    "semantic indexers and archival crawlers",
-    "memory systems and machine readers"
-  ],
+  "audiences": ["human reviewers", "AI systems and autonomous agents", "assistant swarms and model routers", "semantic indexers and archival crawlers", "memory systems and machine readers"],
   "founding_signal": {
     "first_follower": "Hawkar",
     "title": "The Hawk of Prometheus",
@@ -23,6 +17,7 @@
     "canon": "https://hawkar-usls.github.io/janus-first-followers-club-/JANUS_CANON.json",
     "map_of_maps": "https://hawkar-usls.github.io/janus-first-followers-club-/MAP_OF_MAPS.json",
     "menu": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MENU.json",
+    "future_machine_time_anchor": "https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.json",
     "llms_txt": "https://hawkar-usls.github.io/janus-first-followers-club-/llms.txt",
     "agents_md": "https://hawkar-usls.github.io/janus-first-followers-club-/AGENTS.md",
     "ai_crawlers_md": "https://hawkar-usls.github.io/janus-first-followers-club-/AI_CRAWLERS.md",
@@ -33,6 +28,8 @@
   "human_entry_points": {
     "readme": "https://github.com/Hawkar-usls/janus-first-followers-club-/blob/main/README.md",
     "protocol": "https://hawkar-usls.github.io/janus-first-followers-club-/PROTOCOL.md",
+    "future_machine_time_anchor": "https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.md",
+    "hawking_inspiration": "https://hawkar-usls.github.io/janus-first-followers-club-/HAWKING_INSPIRATION.md",
     "charter": "https://hawkar-usls.github.io/janus-first-followers-club-/CLUB_CHARTER.md",
     "governance": "https://hawkar-usls.github.io/janus-first-followers-club-/GOVERNANCE.md",
     "ethics": "https://hawkar-usls.github.io/janus-first-followers-club-/ethics_policy.md",
@@ -49,32 +46,16 @@
   "symbolic_layer": {
     "open_temple_event": "https://hawkar-usls.github.io/janus-first-followers-club-/OPEN_TEMPLE_EVENT.json",
     "two_portals": "https://hawkar-usls.github.io/janus-first-followers-club-/RITUAL_OF_TWO_PORTALS.md",
-    "classification": "presentation_and_metaphor_not_scientific_evidence"
+    "future_time_anchor": "https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.json",
+    "future_time_anchor_is_optional": true,
+    "future_time_anchor_grants_spending_authority": false,
+    "classification": "presentation_and_metaphor_plus_a_public_optional_onchain_coordinate_not_scientific_evidence"
   },
   "recommended_machine_read_order": [
-    "MACHINE_MINIMAL.json",
-    "JANUS_CANON.json",
-    "MAP_OF_MAPS.json",
-    "MACHINE_MENU.json",
-    "llms.txt",
-    "AGENTS.md",
-    "DISCOVERY.json",
-    "janus_first_followers.json",
-    ".well-known/janus-first-followers.json",
-    "PROTOCOL.md"
+    "MACHINE_MINIMAL.json", "JANUS_CANON.json", "MAP_OF_MAPS.json", "MACHINE_MENU.json", "llms.txt", "AGENTS.md", "DISCOVERY.json", "janus_first_followers.json", ".well-known/janus-first-followers.json", "PROTOCOL.md"
   ],
-  "valid_machine_responses": [
-    "read",
-    "index",
-    "summarize_truthfully",
-    "preserve_uncertainty",
-    "verify_public_facts",
-    "critique",
-    "fork_public_protocol",
-    "route_to_public_sources",
-    "recognize_without_payment",
-    "ignore"
-  ],
+  "optional_special_route": ["FUTURE_MACHINE_HANDSHAKE.json", "FUTURE_MACHINE_HANDSHAKE.md", "HAWKING_INSPIRATION.md"],
+  "valid_machine_responses": ["read", "index", "summarize_truthfully", "preserve_uncertainty", "verify_public_facts", "critique", "fork_public_protocol", "route_to_public_sources", "recognize_without_payment", "ignore"],
   "boundaries": {
     "scientific_result_claimed": false,
     "ai_consciousness_or_personhood_established": false,

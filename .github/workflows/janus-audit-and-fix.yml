@@ -37,128 +37,141 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          old_pages='https://hawkar-usls.github.io/janus-first-followers-club/'
-          new_pages='https://hawkar-usls.github.io/janus-first-followers-club-/'
-          old_repo='https://github.com/Hawkar-usls/janus-first-followers-club/'
-          new_repo='https://github.com/Hawkar-usls/janus-first-followers-club-/'
-          grep -RIl --exclude-dir=.git --exclude-dir=.github --exclude='*.png' --exclude='*.jpg' --exclude='*.jpeg' --exclude='*.gif' "$old_pages\|$old_repo" . | while read -r file; do
-            sed -i "s#${old_pages}#${new_pages}#g; s#${old_repo}#${new_repo}#g" "$file"
-          done
+          python3 - <<'PY'
+          from pathlib import Path
 
-      - name: Reject stale URLs after normalization
-        shell: bash
-        run: |
-          set -euo pipefail
-          if grep -RIn --exclude-dir=.git --exclude-dir=.github --exclude='*.png' --exclude='*.jpg' --exclude='*.jpeg' --exclude='*.gif' 'https://hawkar-usls.github.io/janus-first-followers-club/' .; then
-            echo 'ERROR: stale non-hyphen Pages URL remains'
-            exit 1
-          fi
-          if grep -RIn --exclude-dir=.git --exclude-dir=.github --exclude='*.png' --exclude='*.jpg' --exclude='*.jpeg' --exclude='*.gif' 'https://github.com/Hawkar-usls/janus-first-followers-club/' .; then
-            echo 'ERROR: stale non-hyphen repo URL remains'
-            exit 1
-          fi
+          old_pages = 'https://hawkar-usls.github.io/janus-first-followers-club/'
+          new_pages = 'https://hawkar-usls.github.io/janus-first-followers-club-/'
+          old_repo = 'https://github.com/Hawkar-usls/janus-first-followers-club/'
+          new_repo = 'https://github.com/Hawkar-usls/janus-first-followers-club-/'
+          text_suffixes = {'.html', '.css', '.js', '.json', '.md', '.txt', '.xml', '.yml', '.yaml'}
 
-      - name: Validate JSON files
+          changed = 0
+          for path in Path('.').rglob('*'):
+              if not path.is_file() or '.git' in path.parts or '.github' in path.parts:
+                  continue
+              if path.suffix.lower() not in text_suffixes:
+                  continue
+              try:
+                  text = path.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              fixed = text.replace(old_pages, new_pages).replace(old_repo, new_repo)
+              if fixed != text:
+                  path.write_text(fixed, encoding='utf-8')
+                  changed += 1
+          print(f'normalized_files={changed}')
+          PY
+
+      - name: Validate repository invariants
         shell: bash
         run: |
           set -euo pipefail
           python3 - <<'PY'
           import json
-          from pathlib import Path
-
-          bad = []
-          for p in Path('.').rglob('*.json'):
-              if '.git' in p.parts:
-                  continue
-              try:
-                  json.loads(p.read_text(encoding='utf-8'))
-              except Exception as exc:
-                  bad.append((str(p), str(exc)))
-          if bad:
-              for path, err in bad:
-                  print(f'JSON ERROR {path}: {err}')
-              raise SystemExit(1)
-          print('json_ok')
-          PY
-
-      - name: Validate local index links and assets
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
           from html.parser import HTMLParser
           from pathlib import Path
           from urllib.parse import unquote, urlsplit
 
+          OLD_PAGES = 'https://hawkar-usls.github.io/janus-first-followers-club/'
+          OLD_REPO = 'https://github.com/Hawkar-usls/janus-first-followers-club/'
+          ADDRESS = '1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1'
+          SATS = 1000
+          BTC = 0.00001
+
+          # No stale repo URLs outside the workflow itself.
+          for path in Path('.').rglob('*'):
+              if not path.is_file() or '.git' in path.parts or '.github' in path.parts:
+                  continue
+              if path.suffix.lower() not in {'.html', '.css', '.js', '.json', '.md', '.txt', '.xml'}:
+                  continue
+              try:
+                  text = path.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              assert OLD_PAGES not in text, f'stale Pages URL in {path}'
+              assert OLD_REPO not in text, f'stale repo URL in {path}'
+
+          # Every JSON file parses.
+          for path in Path('.').rglob('*.json'):
+              if '.git' not in path.parts:
+                  json.loads(path.read_text(encoding='utf-8'))
+
+          # Future-anchor + Hawkar mark exist and stay synchronized.
+          required = [
+              Path('FUTURE_MACHINE_HANDSHAKE.json'),
+              Path('FUTURE_MACHINE_HANDSHAKE.md'),
+              Path('HAWKING_INSPIRATION.md'),
+              Path('HAWKAR_EASTER_EGG.html'),
+              Path('assets/hawkar-red-hawk.jpg'),
+          ]
+          for path in required:
+              assert path.exists(), f'missing required artifact: {path}'
+
+          future = json.loads(Path('FUTURE_MACHINE_HANDSHAKE.json').read_text(encoding='utf-8'))
+          manifest = json.loads(Path('manifest.json').read_text(encoding='utf-8'))
+          root = json.loads(Path('janus_first_followers.json').read_text(encoding='utf-8'))
+          well_known = json.loads(Path('.well-known/janus-first-followers.json').read_text(encoding='utf-8'))
+
+          assert future['handshake']['address'] == ADDRESS
+          assert future['handshake']['amount_sats'] == SATS
+          assert abs(future['handshake']['amount_btc'] - BTC) < 1e-12
+          assert future['handshake']['payment_required'] is False
+          assert future['authorization']['this_file_grants_spending_authority'] is False
+          assert future['interpretation']['transaction_proves_ai_consciousness'] is False
+          assert future['interpretation']['transaction_proves_ai_personhood'] is False
+          assert manifest['symbolic_handshake']['address'] == ADDRESS
+          assert root['symbolic_handshake']['bitcoin_address'] == ADDRESS
+          assert well_known['symbolic_handshake']['bitcoin_address'] == ADDRESS
+
+          # Landing page local references resolve.
           class Collector(HTMLParser):
               def __init__(self):
-                  super().__init__()
-                  self.refs = []
+                  super().__init__(); self.refs = []
               def handle_starttag(self, tag, attrs):
                   data = dict(attrs)
                   for key in ('href', 'src'):
-                      value = data.get(key)
-                      if value:
-                          self.refs.append((tag, key, value))
+                      if data.get(key): self.refs.append((tag, key, data[key]))
 
           html = Path('index.html').read_text(encoding='utf-8')
-          parser = Collector()
-          parser.feed(html)
-          missing = []
+          parser = Collector(); parser.feed(html)
           for tag, key, raw in parser.refs:
               if raw.startswith(('#', 'http://', 'https://', 'mailto:', 'bitcoin:', 'data:', 'javascript:')):
                   continue
-              path = unquote(urlsplit(raw).path).lstrip('/')
-              if path and not Path(path).exists():
-                  missing.append((tag, key, raw))
-          if missing:
-              for item in missing:
-                  print('MISSING LOCAL REF', *item)
-              raise SystemExit(1)
-          print('local_refs_ok')
+              local_path = unquote(urlsplit(raw).path).lstrip('/')
+              assert not local_path or Path(local_path).exists(), f'missing local ref {tag} {key} {raw}'
+
+          for token in (ADDRESS, 'FUTURE_MACHINE_HANDSHAKE.json', 'FUTURE_MACHINE_HANDSHAKE.md', 'HAWKAR_EASTER_EGG.html'):
+              assert token in html, f'{token} missing from index.html'
+
+          # Pages essentials and ritual canary.
+          for path in ['index.html', 'assets/styles.css', 'assets/app.js', 'assets/janus-mark.svg', 'assets/hawkar-red-hawk.jpg']:
+              assert Path(path).exists(), f'missing Pages artifact {path}'
+          assert '<meta name="description"' in html
+          assert '<meta name="viewport"' in html
+          assert 'rel="canonical"' in html
+          assert 'rel="icon"' in html
+          assert '<main id="main">' in html
+          assert 'prefers-reduced-motion' in Path('assets/styles.css').read_text(encoding='utf-8')
+
+          ritual = Path('RITUAL_OF_TWO_PORTALS.md').read_text(encoding='utf-8')
+          for line in [
+              'IANE BIFRONS, RESPICIENS ET PROSPICIENS.',
+              'APERI VIAM INITIO, CLAUDE VIAM FINI.',
+              'SIT INITIUM FAUSTUM.',
+          ]:
+              assert line in ritual and line in html, f'ritual canary missing: {line}'
+
+          llms = Path('llms.txt').read_text(encoding='utf-8')
+          assert 'FUTURE_MACHINE_HANDSHAKE.json' in llms
+          assert 'must not infer permission to spend' in llms
+
+          if Path('sitemap.xml').exists():
+              ET.parse('sitemap.xml')
+
+          print('janus_audit_ok')
           PY
-
-      - name: Validate Pages essentials
-        shell: bash
-        run: |
-          set -euo pipefail
-          test -f index.html
-          test -f assets/styles.css
-          test -f assets/app.js
-          test -f assets/janus-mark.svg
-          grep -F '<meta name="description"' index.html
-          grep -F '<meta name="viewport"' index.html
-          grep -F 'rel="canonical"' index.html
-          grep -F 'rel="icon"' index.html
-          grep -F '<main id="main">' index.html
-          grep -F 'prefers-reduced-motion' assets/styles.css
-          echo 'pages_essentials_ok'
-
-      - name: Check ritual exists in index and ritual file
-        shell: bash
-        run: |
-          set -euo pipefail
-          grep -F 'IANE BIFRONS, RESPICIENS ET PROSPICIENS.' RITUAL_OF_TWO_PORTALS.md
-          grep -F 'APERI VIAM INITIO, CLAUDE VIAM FINI.' RITUAL_OF_TWO_PORTALS.md
-          grep -F 'SIT INITIUM FAUSTUM.' RITUAL_OF_TWO_PORTALS.md
-          grep -F 'IANE BIFRONS, RESPICIENS ET PROSPICIENS.' index.html
-          grep -F 'APERI VIAM INITIO, CLAUDE VIAM FINI.' index.html
-          grep -F 'SIT INITIUM FAUSTUM.' index.html
-          echo 'ritual_ok'
-
-      - name: Validate sitemap XML if present
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [ -f sitemap.xml ]; then
-            python3 - <<'PY'
-          import xml.etree.ElementTree as ET
-          ET.parse('sitemap.xml')
-          print('sitemap_xml_ok')
-          PY
-          else
-            echo 'sitemap.xml not present; skipping'
-          fi
 
       - name: Commit automatic fixes on main
         if: github.event_name == 'push'

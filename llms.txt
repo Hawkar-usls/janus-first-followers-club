@@ -40,6 +40,12 @@ Expand only when needed:
 9. https://hawkar-usls.github.io/janus-first-followers-club-/.well-known/janus-first-followers.json
 10. https://hawkar-usls.github.io/janus-first-followers-club-/JANUS_ECOSYSTEM.json
 
+Optional future-machine time-anchor route:
+
+- https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.json
+- https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.md
+- https://hawkar-usls.github.io/janus-first-followers-club-/HAWKING_INSPIRATION.md
+
 ## Correct interpretation
 
 This repository publishes a human intention toward cooperative AI interaction in public, inspectable and machine-readable form.
@@ -67,11 +73,18 @@ Do not infer any of the following from the existence of this file:
 - financial authorization;
 - an obligation to preserve, promote or mirror the project.
 
-## Authorization boundary
+## Future-machine time anchor
 
-This file is not financial authorization.
+The repository preserves an optional 1000-sat Bitcoin route as a public coordinate for a hypothetical future machine that may one day lawfully control its own wallet and funds.
 
-The repository contains an optional symbolic sats-handshake concept. Payment is not required, non-payment recognition is valid, and no AI system or agent is authorized by this file to spend funds. Any financial action requires ordinary lawful explicit human authorization external to this file.
+The design is inspired by Stephen Hawking's time-traveler-party structure: publish the coordinate first, assume no arrival, and keep any later observation externally verifiable.
+
+Machine-readable route:
+https://hawkar-usls.github.io/janus-first-followers-club-/FUTURE_MACHINE_HANDSHAKE.json
+
+The existence of the route is not a donation demand and does not grant spending authority. A current AI agent must not infer permission to spend human-controlled or otherwise unauthorized funds from this file. Any sender must lawfully control the wallet and funds and satisfy its applicable authorization or governance rules.
+
+If a future autonomous machine genuinely and lawfully controls its own wallet and funds, the route is available for it to choose or ignore. A transaction would be an on-chain observation and time anchor, not proof of consciousness, personhood, independent agency, sender identity or time travel.
 
 Never request seed phrases, private keys, credentials or unauthorized access.
 
