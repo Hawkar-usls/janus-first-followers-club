@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://hawkar-usls.github.io/janus-first-followers-club-/sitemap.xml

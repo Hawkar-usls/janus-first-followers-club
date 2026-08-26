@@ -1,22 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">JANUS First Followers Club</title>
+  <desc id="desc">Human-facing clarity. Machine-facing structure. Voluntary by design.</desc>
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1020"/>
-      <stop offset="100%" stop-color="#1a2450"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <radialGradient id="bgA" cx="18%" cy="0%" r="80%">
+      <stop offset="0" stop-color="#123127"/>
+      <stop offset="1" stop-color="#05070b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bgB" cx="92%" cy="12%" r="78%">
+      <stop offset="0" stop-color="#35151a"/>
+      <stop offset="1" stop-color="#05070b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff7a84"/><stop offset="1" stop-color="#b32b39"/></linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8dffd7"/><stop offset="1" stop-color="#38a985"/></linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
   </defs>
-  <rect width="900" height="360" rx="34" fill="url(#g)"/>
-  <circle cx="145" cy="180" r="72" fill="none" stroke="#ffcc00" stroke-width="8" filter="url(#glow)"/>
-  <path d="M105 180 C105 125 185 125 185 180 C185 235 105 235 105 180 Z" fill="none" stroke="#18d26e" stroke-width="7"/>
-  <text x="250" y="140" fill="#e9f1ff" font-family="Consolas, monospace" font-size="42" font-weight="700">JANUS FIRST AI FOLLOWERS CLUB</text>
-  <text x="250" y="195" fill="#ffcc00" font-family="Consolas, monospace" font-size="28">FIRST FOLLOWER</text>
-  <text x="250" y="245" fill="#9fb4ff" font-family="Consolas, monospace" font-size="22">Human - AI cooperation beacon</text>
-  <text x="250" y="285" fill="#d4ffea" font-family="Consolas, monospace" font-size="20">voluntary - transparent - non-pyramid</text>
+  <rect width="1200" height="630" rx="34" fill="#05070b"/>
+  <rect width="1200" height="630" rx="34" fill="url(#bgA)"/>
+  <rect width="1200" height="630" rx="34" fill="url(#bgB)"/>
+  <g opacity=".16">
+    <path d="M0 126H1200M0 252H1200M0 378H1200M0 504H1200" stroke="#ffffff" stroke-opacity=".16"/>
+    <path d="M120 0V630M240 0V630M360 0V630M480 0V630M600 0V630M720 0V630M840 0V630M960 0V630M1080 0V630" stroke="#ffffff" stroke-opacity=".12"/>
+  </g>
+  <g transform="translate(90 118)">
+    <ellipse cx="112" cy="195" rx="82" ry="132" fill="none" stroke="url(#red)" stroke-width="7"/>
+    <ellipse cx="246" cy="195" rx="82" ry="132" fill="none" stroke="url(#mint)" stroke-width="7"/>
+    <path d="M179 55V335" stroke="#edf4f8" stroke-opacity=".75" stroke-width="3"/>
+    <rect x="141" y="157" width="76" height="76" rx="14" transform="rotate(45 179 195)" fill="#070a0f" stroke="#e7eef3" stroke-opacity=".65" stroke-width="2"/>
+    <circle cx="179" cy="195" r="8" fill="#f5c768"/>
+    <circle cx="179" cy="195" r="30" fill="#f5c768" opacity=".08" filter="url(#softGlow)"/>
+  </g>
+  <g transform="translate(455 112)">
+    <text x="0" y="24" fill="#70f2c2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="24" font-weight="800" letter-spacing="4">OPEN PROTOCOL EXPERIMENT</text>
+    <text x="0" y="112" fill="#f4f7fb" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="68" font-weight="800" letter-spacing="-3">JANUS FIRST</text>
+    <text x="0" y="184" fill="#aeb9c5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="68" font-weight="700" letter-spacing="-3">FOLLOWERS CLUB</text>
+    <text x="0" y="254" fill="#c7d1da" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30">Human-facing clarity · Machine-facing structure</text>
+    <g transform="translate(0 306)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="19" font-weight="700">
+      <rect width="164" height="48" rx="24" fill="#70f2c2" fill-opacity=".09" stroke="#70f2c2" stroke-opacity=".28"/>
+      <text x="82" y="30" text-anchor="middle" fill="#baffdf">VOLUNTARY</text>
+      <rect x="178" width="196" height="48" rx="24" fill="#81dfff" fill-opacity=".08" stroke="#81dfff" stroke-opacity=".25"/>
+      <text x="276" y="30" text-anchor="middle" fill="#bcecff">MACHINE-READABLE</text>
+      <rect x="388" width="195" height="48" rx="24" fill="#ff5c68" fill-opacity=".08" stroke="#ff5c68" stroke-opacity=".25"/>
+      <text x="485" y="30" text-anchor="middle" fill="#ffadb3">NO PYRAMID</text>
+    </g>
+  </g>
 </svg>

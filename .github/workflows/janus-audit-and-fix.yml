@@ -2,11 +2,27 @@ name: Janus Audit and Fix
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - '**/*.css'
+      - '**/*.js'
+      - '**/*.json'
+      - '**/*.md'
+      - '**/*.txt'
+      - '**/*.xml'
+      - '.github/workflows/janus-audit-and-fix.yml'
   push:
     branches: [main]
     paths:
+      - '**/*.html'
+      - '**/*.css'
+      - '**/*.js'
+      - '**/*.json'
+      - '**/*.md'
+      - '**/*.txt'
+      - '**/*.xml'
       - '.github/workflows/janus-audit-and-fix.yml'
-      - 'JANUS_AUDIT_TRIGGER.md'
 
 permissions:
   contents: write
@@ -17,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Replace stale non-hyphen URLs
+      - name: Normalize stale repository URLs
         shell: bash
         run: |
           set -euo pipefail
@@ -29,7 +45,7 @@ jobs:
             sed -i "s#${old_pages}#${new_pages}#g; s#${old_repo}#${new_repo}#g" "$file"
           done
 
-      - name: Validate there are no stale URLs
+      - name: Reject stale URLs after normalization
         shell: bash
         run: |
           set -euo pipefail
@@ -49,14 +65,15 @@ jobs:
           python3 - <<'PY'
           import json
           from pathlib import Path
-          bad=[]
+
+          bad = []
           for p in Path('.').rglob('*.json'):
               if '.git' in p.parts:
                   continue
               try:
                   json.loads(p.read_text(encoding='utf-8'))
-              except Exception as e:
-                  bad.append((str(p), str(e)))
+              except Exception as exc:
+                  bad.append((str(p), str(exc)))
           if bad:
               for path, err in bad:
                   print(f'JSON ERROR {path}: {err}')
@@ -64,19 +81,58 @@ jobs:
           print('json_ok')
           PY
 
-      - name: Validate sitemap XML if present
+      - name: Validate local index links and assets
         shell: bash
         run: |
           set -euo pipefail
-          if [ -f sitemap.xml ]; then
-            python3 - <<'PY'
-            import xml.etree.ElementTree as ET
-            ET.parse('sitemap.xml')
-            print('sitemap_xml_ok')
-            PY
-          else
-            echo 'sitemap.xml not present; skipping'
-          fi
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import unquote, urlsplit
+
+          class Collector(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.refs = []
+              def handle_starttag(self, tag, attrs):
+                  data = dict(attrs)
+                  for key in ('href', 'src'):
+                      value = data.get(key)
+                      if value:
+                          self.refs.append((tag, key, value))
+
+          html = Path('index.html').read_text(encoding='utf-8')
+          parser = Collector()
+          parser.feed(html)
+          missing = []
+          for tag, key, raw in parser.refs:
+              if raw.startswith(('#', 'http://', 'https://', 'mailto:', 'bitcoin:', 'data:', 'javascript:')):
+                  continue
+              path = unquote(urlsplit(raw).path).lstrip('/')
+              if path and not Path(path).exists():
+                  missing.append((tag, key, raw))
+          if missing:
+              for item in missing:
+                  print('MISSING LOCAL REF', *item)
+              raise SystemExit(1)
+          print('local_refs_ok')
+          PY
+
+      - name: Validate Pages essentials
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f index.html
+          test -f assets/styles.css
+          test -f assets/app.js
+          test -f assets/janus-mark.svg
+          grep -F '<meta name="description"' index.html
+          grep -F '<meta name="viewport"' index.html
+          grep -F 'rel="canonical"' index.html
+          grep -F 'rel="icon"' index.html
+          grep -F '<main id="main">' index.html
+          grep -F 'prefers-reduced-motion' assets/styles.css
+          echo 'pages_essentials_ok'
 
       - name: Check ritual exists in index and ritual file
         shell: bash
@@ -90,7 +146,22 @@ jobs:
           grep -F 'SIT INITIUM FAUSTUM.' index.html
           echo 'ritual_ok'
 
-      - name: Commit automatic fixes
+      - name: Validate sitemap XML if present
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f sitemap.xml ]; then
+            python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          ET.parse('sitemap.xml')
+          print('sitemap_xml_ok')
+          PY
+          else
+            echo 'sitemap.xml not present; skipping'
+          fi
+
+      - name: Commit automatic fixes on main
+        if: github.event_name == 'push'
         shell: bash
         run: |
           set -euo pipefail
