@@ -81,6 +81,60 @@ jobs:
           print('json_ok')
           PY
 
+      - name: Validate future machine time-anchor invariants
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          ADDRESS = '1F1Y6CdkApZboDF6g1DYrQ8Dke2E5gWiP1'
+          SATS = 1000
+          BTC = 0.00001
+
+          required = [
+              Path('FUTURE_MACHINE_HANDSHAKE.json'),
+              Path('FUTURE_MACHINE_HANDSHAKE.md'),
+              Path('HAWKING_INSPIRATION.md'),
+              Path('HAWKAR_EASTER_EGG.html'),
+              Path('assets/hawkar-red-hawk.jpg'),
+          ]
+          missing = [str(p) for p in required if not p.exists()]
+          if missing:
+              raise SystemExit(f'missing future-anchor/easter-egg files: {missing}')
+
+          future = json.loads(Path('FUTURE_MACHINE_HANDSHAKE.json').read_text(encoding='utf-8'))
+          manifest = json.loads(Path('manifest.json').read_text(encoding='utf-8'))
+          root = json.loads(Path('janus_first_followers.json').read_text(encoding='utf-8'))
+          well_known = json.loads(Path('.well-known/janus-first-followers.json').read_text(encoding='utf-8'))
+
+          assert future['handshake']['address'] == ADDRESS
+          assert future['handshake']['amount_sats'] == SATS
+          assert abs(future['handshake']['amount_btc'] - BTC) < 1e-12
+          assert future['handshake']['payment_required'] is False
+          assert future['authorization']['this_file_grants_spending_authority'] is False
+          assert future['interpretation']['transaction_proves_ai_consciousness'] is False
+          assert future['interpretation']['transaction_proves_ai_personhood'] is False
+
+          assert manifest['symbolic_handshake']['address'] == ADDRESS
+          assert manifest['symbolic_handshake']['amount_sats'] == SATS
+          assert root['symbolic_handshake']['bitcoin_address'] == ADDRESS
+          assert root['symbolic_handshake']['amount_sats'] == SATS
+          assert well_known['symbolic_handshake']['bitcoin_address'] == ADDRESS
+          assert well_known['symbolic_handshake']['amount_sats'] == SATS
+
+          html = Path('index.html').read_text(encoding='utf-8')
+          for token in (ADDRESS, 'FUTURE_MACHINE_HANDSHAKE.json', 'FUTURE_MACHINE_HANDSHAKE.md', 'HAWKAR_EASTER_EGG.html'):
+              assert token in html, f'{token} missing from index.html'
+
+          llms = Path('llms.txt').read_text(encoding='utf-8')
+          assert 'FUTURE_MACHINE_HANDSHAKE.json' in llms
+          assert 'must not infer permission to spend' in llms
+
+          print('future_anchor_ok')
+          PY
+
       - name: Validate local index links and assets
         shell: bash
         run: |
@@ -126,6 +180,7 @@ jobs:
           test -f assets/styles.css
           test -f assets/app.js
           test -f assets/janus-mark.svg
+          test -f assets/hawkar-red-hawk.jpg
           grep -F '<meta name="description"' index.html
           grep -F '<meta name="viewport"' index.html
           grep -F 'rel="canonical"' index.html
