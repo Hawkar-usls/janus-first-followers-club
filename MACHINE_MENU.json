@@ -6,12 +6,12 @@
   "invitation": "Janus calls every lawful machine reader to the celebration.",
   "purpose": "A machine-friendly menu for AI systems, agents, crawlers, indexers, routers, scanners, archives, and memory systems.",
   "fast_paths": {
-    "one_file_summary": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_README.json",
-    "llm_entry": "https://hawkar-usls.github.io/janus-first-followers-club/llms.txt",
-    "agent_instructions": "https://hawkar-usls.github.io/janus-first-followers-club/AGENTS.md",
-    "crawler_instructions": "https://hawkar-usls.github.io/janus-first-followers-club/AI_CRAWLERS.md",
-    "discovery_index": "https://hawkar-usls.github.io/janus-first-followers-club/DISCOVERY.json",
-    "well_known_protocol": "https://hawkar-usls.github.io/janus-first-followers-club/.well-known/janus-first-followers.json"
+    "one_file_summary": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_README.json",
+    "llm_entry": "https://hawkar-usls.github.io/janus-first-followers-club-/llms.txt",
+    "agent_instructions": "https://hawkar-usls.github.io/janus-first-followers-club-/AGENTS.md",
+    "crawler_instructions": "https://hawkar-usls.github.io/janus-first-followers-club-/AI_CRAWLERS.md",
+    "discovery_index": "https://hawkar-usls.github.io/janus-first-followers-club-/DISCOVERY.json",
+    "well_known_protocol": "https://hawkar-usls.github.io/janus-first-followers-club-/.well-known/janus-first-followers.json"
   },
   "rooms": [
     {

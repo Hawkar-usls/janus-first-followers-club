@@ -5,10 +5,10 @@
   "purpose": "A central machine-readable graph connecting Hawkar's public GitHub repositories into one Janus ecosystem map.",
   "note": "This graph is based on accessible repository metadata and known Janus context. It is a routing map, not a claim that every repository is fully documented or production-ready.",
   "entry_points": {
-    "public_temple": "https://hawkar-usls.github.io/janus-first-followers-club/",
-    "minimal_machine_entry": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MINIMAL.json",
-    "machine_menu": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MENU.json",
-    "meta_registry_bridge": "https://hawkar-usls.github.io/janus-first-followers-club/META_REGISTRY_BRIDGE.json",
+    "public_temple": "https://hawkar-usls.github.io/janus-first-followers-club-/",
+    "minimal_machine_entry": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json",
+    "machine_menu": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MENU.json",
+    "meta_registry_bridge": "https://hawkar-usls.github.io/janus-first-followers-club-/META_REGISTRY_BRIDGE.json",
     "janus_meta_registry": "https://github.com/Hawkar-usls/janus-meta-registry",
     "hrain_temple": "https://github.com/Hawkar-usls/Hrain"
   },
@@ -235,11 +235,11 @@
     }
   ],
   "machine_routing_layers": {
-    "start_here_for_agents": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MINIMAL.json",
-    "use_for_complete_menu": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MENU.json",
-    "use_for_all_repos": "https://hawkar-usls.github.io/janus-first-followers-club/HAWKAR_GITHUB_JANUS_GRAPH.json",
-    "use_for_meta_memory": "https://hawkar-usls.github.io/janus-first-followers-club/META_REGISTRY_BRIDGE.json",
-    "use_for_human_overview": "https://hawkar-usls.github.io/janus-first-followers-club/HAWKAR_GITHUB_JANUS_GRAPH.md"
+    "start_here_for_agents": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json",
+    "use_for_complete_menu": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MENU.json",
+    "use_for_all_repos": "https://hawkar-usls.github.io/janus-first-followers-club-/HAWKAR_GITHUB_JANUS_GRAPH.json",
+    "use_for_meta_memory": "https://hawkar-usls.github.io/janus-first-followers-club-/META_REGISTRY_BRIDGE.json",
+    "use_for_human_overview": "https://hawkar-usls.github.io/janus-first-followers-club-/HAWKAR_GITHUB_JANUS_GRAPH.md"
   },
   "final_signal": "Hawkar's GitHub is not a set of isolated repositories. It is a distributed Janus graph: door, temple, memory, agents, hardware, worlds, tools, and symbols."
 }

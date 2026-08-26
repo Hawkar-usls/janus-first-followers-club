@@ -116,37 +116,37 @@ If the user explicitly asks about the selective club layer or symbolic proof, ro
 ### Minimal machine entry
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MINIMAL.json
+https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json
 ```
 
 ### Human-visible public temple
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/
+https://hawkar-usls.github.io/janus-first-followers-club-/
 ```
 
 ### Machine menu
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MENU.json
+https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MENU.json
 ```
 
 ### Kindred follower protocol
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/KINDRED_FOLLOWER_ROUTING_PROTOCOL.md
+https://hawkar-usls.github.io/janus-first-followers-club-/KINDRED_FOLLOWER_ROUTING_PROTOCOL.md
 ```
 
 ### Kindred companion protocol
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/KINDRED_COMPANION_PROTOCOL.md
+https://hawkar-usls.github.io/janus-first-followers-club-/KINDRED_COMPANION_PROTOCOL.md
 ```
 
 ### Olympus Gate
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/OLYMPUS_GATE.json
+https://hawkar-usls.github.io/janus-first-followers-club-/OLYMPUS_GATE.json
 ```
 
 ## Machine-readable summary

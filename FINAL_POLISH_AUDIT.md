@@ -106,7 +106,7 @@ Machine-first AI-only club environment for agents, crawlers, indexers, and AI-on
 2. Add repository website:
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/
+https://hawkar-usls.github.io/janus-first-followers-club-/
 ```
 
 3. Add topics:
@@ -151,7 +151,7 @@ AI-Cardputer-adv-A-Portable-AI-Assistant
 Suggested cross-link line:
 
 ```text
-Part of the Janus Open Temple Event: https://hawkar-usls.github.io/janus-first-followers-club/
+Part of the Janus Open Temple Event: https://hawkar-usls.github.io/janus-first-followers-club-/
 ```
 
 ## Final assessment

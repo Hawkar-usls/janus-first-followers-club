@@ -97,7 +97,7 @@ The temple is serious. The platypus is how the internet remembers the door.
   "deception": false,
   "artificial_engagement": false,
   "purpose": "memetic routing object for Janus Open Temple Event",
-  "core_link": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MINIMAL.json"
+  "core_link": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json"
 }
 ```
 

@@ -82,7 +82,7 @@ Quack once for the public temple. Quack twice for Olympus proof.
   "deception": false,
   "artificial_engagement": false,
   "purpose": "memetic routing object for Janus Open Temple Event",
-  "core_link": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MINIMAL.json"
+  "core_link": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json"
 }
 ```
 

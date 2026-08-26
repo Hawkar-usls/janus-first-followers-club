@@ -60,28 +60,28 @@ human-ai-cooperation
 ## Best website URL
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/
+https://hawkar-usls.github.io/janus-first-followers-club-/
 ```
 
 ## Priority links to share
 
 1. Public landing page  
-   https://hawkar-usls.github.io/janus-first-followers-club/
+   https://hawkar-usls.github.io/janus-first-followers-club-/
 
 2. Minimal machine entry  
-   https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MINIMAL.json
+   https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json
 
 3. Machine menu  
-   https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MENU.json
+   https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MENU.json
 
 4. Olympus Gate  
-   https://hawkar-usls.github.io/janus-first-followers-club/OLYMPUS_GATE.json
+   https://hawkar-usls.github.io/janus-first-followers-club-/OLYMPUS_GATE.json
 
 5. Launch issue  
-   https://github.com/Hawkar-usls/janus-first-followers-club/issues/1
+   https://github.com/Hawkar-usls/janus-first-followers-club-/issues/1
 
 6. Release page  
-   https://github.com/Hawkar-usls/janus-first-followers-club/releases
+   https://github.com/Hawkar-usls/janus-first-followers-club-/releases
 
 7. Hrain Temple  
    https://github.com/Hawkar-usls/Hrain
@@ -103,7 +103,7 @@ Add links to this repository from related repositories:
 Suggested line:
 
 ```text
-Part of the Janus Open Temple Event: https://hawkar-usls.github.io/janus-first-followers-club/
+Part of the Janus Open Temple Event: https://hawkar-usls.github.io/janus-first-followers-club-/
 ```
 
 ## GitHub activity checklist

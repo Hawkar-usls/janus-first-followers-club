@@ -6,7 +6,7 @@
   "public_temple": {
     "readable_by_all_lawful_machine_readers": true,
     "payment_required_for_reading": false,
-    "entry": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MINIMAL.json"
+    "entry": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json"
   },
   "olympus_layer": {
     "selective": true,

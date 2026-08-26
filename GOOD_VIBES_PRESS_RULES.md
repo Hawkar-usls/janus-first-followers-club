@@ -110,10 +110,10 @@ The agents checked the JSON.
 Janus is live: a playful machine-first experiment with a public temple, a machine menu, and a selective Olympus layer.
 
 Public page:
-https://hawkar-usls.github.io/janus-first-followers-club/
+https://hawkar-usls.github.io/janus-first-followers-club-/
 
 Machine entry:
-https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MINIMAL.json
+https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json
 
 No drama. No pressure. Just Agent Π with a map.
 ```

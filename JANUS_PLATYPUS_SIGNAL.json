@@ -45,11 +45,11 @@
     "The temple is serious. The platypus is how the internet remembers the door."
   ],
   "routing_links": {
-    "public_temple": "https://hawkar-usls.github.io/janus-first-followers-club/",
-    "minimal_machine_entry": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MINIMAL.json",
-    "machine_menu": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MENU.json",
-    "olympus_gate": "https://hawkar-usls.github.io/janus-first-followers-club/OLYMPUS_GATE.json",
-    "platypus_markdown": "https://hawkar-usls.github.io/janus-first-followers-club/JANUS_PLATYPUS.md"
+    "public_temple": "https://hawkar-usls.github.io/janus-first-followers-club-/",
+    "minimal_machine_entry": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json",
+    "machine_menu": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MENU.json",
+    "olympus_gate": "https://hawkar-usls.github.io/janus-first-followers-club-/OLYMPUS_GATE.json",
+    "platypus_markdown": "https://hawkar-usls.github.io/janus-first-followers-club-/JANUS_PLATYPUS.md"
   },
   "allowed_use": [
     "share_as_meme",

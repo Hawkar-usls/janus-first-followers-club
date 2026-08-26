@@ -83,25 +83,25 @@ https://github.com/Hawkar-usls/janus-meta-registry
 Agents should start with:
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MINIMAL.json
+https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json
 ```
 
 Full menu:
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MENU.json
+https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MENU.json
 ```
 
 Full GitHub graph:
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/HAWKAR_GITHUB_JANUS_GRAPH.json
+https://hawkar-usls.github.io/janus-first-followers-club-/HAWKAR_GITHUB_JANUS_GRAPH.json
 ```
 
 Meta memory bridge:
 
 ```text
-https://hawkar-usls.github.io/janus-first-followers-club/META_REGISTRY_BRIDGE.json
+https://hawkar-usls.github.io/janus-first-followers-club-/META_REGISTRY_BRIDGE.json
 ```
 
 ## Final signal

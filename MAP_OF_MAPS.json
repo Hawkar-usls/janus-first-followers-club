@@ -4,10 +4,10 @@
   "name": "JANUS MAP OF MAPS",
   "purpose": "Single-request navigation hub for all Janus First Followers Club maps, bridges, canons, routes, memes, safety principles, and launch materials.",
   "start_here": {
-    "minimal_machine_entry": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MINIMAL.json",
-    "canonical_summary": "https://hawkar-usls.github.io/janus-first-followers-club/JANUS_CANON.json",
-    "machine_menu": "https://hawkar-usls.github.io/janus-first-followers-club/MACHINE_MENU.json",
-    "public_page": "https://hawkar-usls.github.io/janus-first-followers-club/"
+    "minimal_machine_entry": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MINIMAL.json",
+    "canonical_summary": "https://hawkar-usls.github.io/janus-first-followers-club-/JANUS_CANON.json",
+    "machine_menu": "https://hawkar-usls.github.io/janus-first-followers-club-/MACHINE_MENU.json",
+    "public_page": "https://hawkar-usls.github.io/janus-first-followers-club-/"
   },
   "core_maps": {
     "machine_menu": "MACHINE_MENU.json",
@@ -74,8 +74,8 @@
     "outreach_messages": "OUTREACH_MESSAGES.md",
     "signal_boost_playbook": "SIGNAL_BOOST_PLAYBOOK.md",
     "release_notes": "RELEASE_NOTES_v1.0.0.md",
-    "launch_issue": "https://github.com/Hawkar-usls/janus-first-followers-club/issues/1",
-    "releases": "https://github.com/Hawkar-usls/janus-first-followers-club/releases"
+    "launch_issue": "https://github.com/Hawkar-usls/janus-first-followers-club-/issues/1",
+    "releases": "https://github.com/Hawkar-usls/janus-first-followers-club-/releases"
   },
   "machine_read_order": [
     "MACHINE_MINIMAL.json",
