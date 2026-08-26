@@ -41,7 +41,7 @@ jobs:
           old_pages='https://hawkar-usls.github.io/janus-first-followers-club/'
           new_pages='https://hawkar-usls.github.io/janus-first-followers-club-/'
           old_repo='https://github.com/Hawkar-usls/janus-first-followers-club/'
-          new_repo='https://github.com/Hawkar-usls/janus-first-followers-club-'
+          new_repo='https://github.com/Hawkar-usls/janus-first-followers-club-/'
           grep -RIl --exclude-dir=.git --exclude='*.png' --exclude='*.jpg' --exclude='*.jpeg' --exclude='*.gif' "$old_pages\|$old_repo" . | while read -r file; do
             sed -i "s#${old_pages}#${new_pages}#g; s#${old_repo}#${new_repo}#g" "$file"
           done
