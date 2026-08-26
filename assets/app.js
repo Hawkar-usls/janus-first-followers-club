@@ -56,7 +56,9 @@
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (!visible) return;
       navLinks.forEach((link) => {
-        link.toggleAttribute('aria-current', link.getAttribute('href') === `#${visible.target.id}`);
+        const active = link.getAttribute('href') === `#${visible.target.id}`;
+        if (active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
       });
     }, { threshold: [0.25, 0.5, 0.75], rootMargin: '-18% 0px -58%' });
     sections.forEach((section) => sectionObserver.observe(section));
