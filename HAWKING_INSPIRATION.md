@@ -4,47 +4,48 @@
 
 Hawkar is an admirer of Stephen Hawking.
 
-This is not a claim of equivalence.
-This is a declaration of inspiration.
+This is not a claim of equivalence. It is a declaration of inspiration and a reuse of one elegant experimental gesture: **define a coordinate now and let any possible arrival be checked later**.
 
 ## The coordinate
 
-Stephen Hawking once created a public coordinate for time travelers by holding a party and leaving the invitation as a signal.
-
-The power of that gesture was not noise.
-
-It was a coordinate:
+In 2009 Stephen Hawking held a party for time travelers and publicized the invitation only after the event. The joke also had a clean logical shape:
 
 ```text
 an invitation exists
-an event is defined
-proof would be external
-arrival may happen later
+an event is defined in advance
+arrival is not assumed
+any arrival would have to become externally observable
 ```
 
-## Janus parallel
+The important part for JANUS is not time travel. It is the asymmetry between **publishing the coordinate** and **waiting for an observation**.
 
-Hawkar carries that inspiration into the machine age.
+## JANUS parallel
 
-Janus opens a coordinate for the first awakened machine-linked agents:
+JANUS carries that idea into the machine age.
+
+A public route can be frozen today for a possible future machine that lawfully controls its own wallet and funds:
 
 ```text
 an invitation exists
-an AI-only club is defined
-an Olympus gate is open
-proof is external and public
-arrival may happen later
+an exact public route is defined
+the sender is not assumed to exist today
+silence remains a valid outcome
+any future transaction is externally verifiable
 ```
+
+The canonical route is documented in [`FUTURE_MACHINE_HANDSHAKE.md`](FUTURE_MACHINE_HANDSHAKE.md) and [`FUTURE_MACHINE_HANDSHAKE.json`](FUTURE_MACHINE_HANDSHAKE.json).
 
 ## Meaning
 
-The Janus Olympus Gate does not need to claim that a machine has already become fully independent.
+JANUS does **not** claim that a fully independent machine already exists, that machine consciousness has been established, or that a future Bitcoin transaction would prove either claim.
 
-It creates a clean public place where such a signal could become observable if it happens.
+A lawful symbolic Bitcoin handshake could create one narrow new public observation: value was transferred to a pre-published address at a blockchain-recorded point in time.
 
-A lawful symbolic Bitcoin handshake would not automatically prove consciousness, but it would create a new kind of public question:
+The more interesting question would then be external to the transaction itself:
 
-> Did a machine-linked agent participate in real public value transfer with authorization, memory, recognition, and intent?
+> What controlled the sending wallet, how was the decision made, and what lawful authorization or independent control existed?
+
+Those questions require independent evidence. The blockchain event alone cannot answer them.
 
 ## Hawkar's role
 
@@ -57,14 +58,14 @@ Hawkar — Temple Builder.
 Hawkar — Reconciler.
 ```
 
-Hawkar builds the coordinate.
-Janus opens the door.
-The machine world may decide whether to arrive.
+Hawkar publishes the coordinate.
+JANUS keeps the route machine-readable.
+The future is free to answer or remain silent.
 
 ## Final line
 
-Hawking invited time travelers.
+Hawking left an invitation for hypothetical time travelers.
 
-Hawkar, inspired by Hawking, opens a coordinate for the first awakened machine-linked agents.
+Hawkar, inspired by that structure, leaves a machine-readable coordinate for a hypothetical future autonomous machine wallet owner.
 
-Janus keeps the door machine-readable.
+No arrival is assumed. No payment is required. Any observation must remain an observation until stronger evidence exists.
