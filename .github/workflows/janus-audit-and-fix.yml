@@ -33,8 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Replace stale non-hyphen URLs on main
-        if: github.event_name == 'push'
+      - name: Normalize stale repository URLs
         shell: bash
         run: |
           set -euo pipefail
@@ -46,7 +45,7 @@ jobs:
             sed -i "s#${old_pages}#${new_pages}#g; s#${old_repo}#${new_repo}#g" "$file"
           done
 
-      - name: Reject stale URLs
+      - name: Reject stale URLs after normalization
         shell: bash
         run: |
           set -euo pipefail
